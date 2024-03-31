@@ -1,0 +1,16 @@
+
+/(?<tipo>Av\.|Rua|Travessa|Alameda|Praça|Avenida)\s(?<nome>.+?)\s*,\s?(?<numero>\d+)\s?(?:-\s?(?<complemento>.+?)\s*)?,\s?(?<bairro>.+),\s?(?<cidade>.+),\s?(?<estado>[A-Z]{2}),\s?(?<cep>\d{5}-\d{3})/
+
+Essa expressão regular é como uma "fórmula" para encontrar endereços em um texto. Vou explicar os diferentes pedaços dela:
+
+Primeiro, procuramos pelo tipo de logradouro (como "Av.", "Rua", etc.). Isso é representado por (?<tipo>Av\.|Rua|Travessa|Alameda|Praça|Avenida).
+
+Depois, pegamos o nome da rua ou avenida. Isso é capturado pelo grupo (?<nome>.+?).
+
+Em seguida, encontramos o número da casa ou prédio, que é representado por \d+.
+
+O complemento do endereço é opcional. Se houver, capturamos essa informação.
+
+Depois vem o nome do bairro ((?<bairro>.+)), seguido pelo nome da cidade ((?<cidade>.+)) e a sigla do estado ((?<estado>[A-Z]{2})).
+
+Finalmente, capturamos o CEP ((?<cep>\d{5}-\d{3})), que segue um padrão de cinco dígitos, um hífen e mais três dígitos.
